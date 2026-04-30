@@ -1,0 +1,31 @@
+{
+    "id": "gazepoint_recorder",
+    "name": "GazePoint Recorder",
+    "description": "Capture plugin for GazePoint3 HD eye tracking device. Records gaze data, pupil measurements, and fixation points in real-time.",
+    "version": "0.1.0",
+    "publisher": {
+        "id": "interaction-lab",
+        "name": "InTeractiOn Lab",
+        "url": "https://interaction-lab.info"
+    },
+    "repository": "https://github.com/MultimodalObserver-2/",
+    "author": {
+        "name": "Camila Carabajal",
+        "email": "camila.carabajal@usach.cl"
+    },
+    "icon": {
+        "dark": "icons/dark.svg",
+        "light": "icons/light.svg"
+    },
+    "locales": "locales",
+    "platform": {
+        "linux": true,
+        "windows": true,
+        "mac": true
+    },
+    "entryPoints": {
+        "mo.plugin": "src.gazepoint_recorder.main:GazePointRecorderPlugin",
+        "mo.plugin.properties": "src.gazepoint_recorder.properties:properties"
+    },
+    "target": "api"
+}
