@@ -2,7 +2,7 @@
     "id": "gazepoint_recorder",
     "name": "GazePoint Recorder",
     "description": "Capture plugin for GazePoint3 HD eye tracking device. Records gaze data, pupil measurements, and fixation points in real-time.",
-    "version": "0.1.0",
+    "version": "1.0.1",
     "publisher": {
         "id": "interaction-lab",
         "name": "InTeractiOn Lab",
