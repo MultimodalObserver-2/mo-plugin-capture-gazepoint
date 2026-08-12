@@ -11,6 +11,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
 from mo.core import load_metadata_json
 from mo.modules.capture.plugins.capture_plugin import CaptureData, CapturePlugin
 
+MAX_RECORDING_TIME = 28800
 
 @load_metadata_json("../..")
 class GazePointRecorderPlugin(CapturePlugin):
@@ -76,7 +77,7 @@ class GazePointRecorderPlugin(CapturePlugin):
         with open(self.raw_output_path, 'w') as f:
             f.write("TIME_TICK|DATE|FPOGX|FPOGY|FPOGV|LPOGX|LPOGY|LPOGV|RPOGX|RPOGY|RPOGV|BPOGX|BPOGY|BPOGV|LPCX|LPCY|LPD|LPV|RPCX|RPCY|RPD|RPV|WIDTH|HEIGHT\n")
         start_time = time.time()
-        while self.capture_event.is_set() and (time.time() - start_time) < 10:
+        while self.capture_event.is_set() and (time.time() - start_time) < MAX_RECORDING_TIME:
             self.paused_event.wait()
             
             if self.workflow_status == 0:
